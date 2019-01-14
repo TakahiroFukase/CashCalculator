@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical">
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:paddingLeft="30dp">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:text="@string/tstr1" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:text="@string/tstr2" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:text="@string/tstr3" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:text="@string/tstr4" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="@string/tstr5" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="@string/tstr6" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:text="@string/tstr7" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="@string/tstr8" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="@string/tstr9" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:text="@string/tstr10" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="@string/tstr11" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="@string/tstr12" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:text="@string/tstr13" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="420dp"
+            android:orientation="vertical"
+            android:paddingTop="50dp">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button1"
+                android:onClick="button1Clicked"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="@string/bstr1" />
+
+            <Button
+                android:id="@+id/button2"
+                android:onClick="button2Clicked"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="@string/bstr2" />
+
+            <Button
+                android:id="@+id/button3"
+                android:onClick="button3Clicked"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="@string/bstr3" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button4"
+                android:onClick="button4Clicked"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="@string/bstr4" />
+
+            <Button
+                android:id="@+id/button5"
+                android:onClick="button5Clicked"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="@string/bstr5" />
+
+            <Button
+                android:id="@+id/button6"
+                android:onClick="button6Clicked"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="@string/bstr6" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button7"
+                android:onClick="button7Clicked"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="@string/bstr7" />
+
+            <Button
+                android:id="@+id/button8"
+                android:onClick="button8Clicked"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="@string/bstr8" />
+
+            <Button
+                android:id="@+id/button9"
+                android:onClick="button9Clicked"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="@string/bstr9" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button10"
+                android:onClick="button10Clicked"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="@string/bstr10" />
+
+            <Button
+                android:id="@+id/button11"
+                android:onClick="button11Clicked"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="@string/bstr11" />
+
+            <Button
+                android:id="@+id/button12"
+                android:onClick="button12Clicked"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="@string/bstr12" />
+         </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

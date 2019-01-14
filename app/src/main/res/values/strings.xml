@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="tstr1">x</string>
+    <string name="tstr2">月</string>
+    <string name="tstr3">y</string>
+    <string name="tstr4">日</string>
+    <string name="tstr5">残金</string>
+    <string name="tstr6">z</string>
+    <string name="tstr7">円</string>
+    <string name="tstr8">残り</string>
+    <string name="tstr9">---</string>
+    <string name="tstr10">日</string>
+    <string name="tstr11">1日あたり</string>
+    <string name="tstr12">---</string>
+    <string name="tstr13">円</string>
+
+    <string name="bstr1">1</string>
+    <string name="bstr2">2</string>
+    <string name="bstr3">3</string>
+    <string name="bstr4">4</string>
+    <string name="bstr5">5</string>
+    <string name="bstr6">6</string>
+    <string name="bstr7">7</string>
+    <string name="bstr8">8</string>
+    <string name="bstr9">9</string>
+    <string name="bstr10">Next/Enter</string>
+    <string name="bstr11">0</string>
+    <string name="bstr12">CA</string>
+    <string name="tv1">for Test</string>
+
+</resources>
