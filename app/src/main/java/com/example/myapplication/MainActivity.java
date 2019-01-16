@@ -11,9 +11,10 @@ public class MainActivity extends AppCompatActivity {
     int x = 0;
     int y = 0;
     int z = 0;
-    boolean xHasValue = false;
-    boolean yHasValue = false;
-    boolean zHasValue = false;
+    boolean dayHasValue = false;
+    boolean monthHasValue = false;
+    boolean cashAmountHasValue = false;
+
     int checkProcess = 1;
 
     boolean missInfo = false;
@@ -35,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
 
         if (checkProcess == 1) {
 
-            if (!(xHasValue)) {
+            if (!(dayHasValue)) {
                 x = num;
-                xHasValue = true;
+                dayHasValue = true;
             } else {
                 x = (x * 10) + num;
             }
@@ -47,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }else if (checkProcess == 2){
 
-            if (!(yHasValue)){
+            if (!(monthHasValue)){
                 y = num;
-                yHasValue = true;
+                monthHasValue = true;
             }else{
                 y = (y * 10) + num;
             }
@@ -60,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
 
         }else if (checkProcess == 3){
 
-            if (!(zHasValue)){
+            if (!(cashAmountHasValue)){
                 z = num;
-                zHasValue = true;
+                cashAmountHasValue = true;
             }else{
                 z = (z * 10) + num;
             }
@@ -127,13 +128,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void button10Clicked(View v){
 
-        if (xHasValue && checkProcess == 1) {
+        if (dayHasValue && checkProcess == 1) {
             checkProcess = 2;
             Toast.makeText(getApplicationContext(), "Enter Day.", Toast.LENGTH_SHORT ).show();
-        }else if (yHasValue && checkProcess == 2){
+        }else if (monthHasValue && checkProcess == 2){
             checkProcess = 3;
             Toast.makeText(getApplicationContext(), "Enter Cash Amount.", Toast.LENGTH_SHORT).show();
-        }else if (zHasValue && checkProcess == 3){
+        }else if (cashAmountHasValue && checkProcess == 3){
             calculate();
         }
 
@@ -150,9 +151,9 @@ public class MainActivity extends AppCompatActivity {
         x = 0;
         y = 0;
         z = 0;
-        xHasValue = false;
-        yHasValue = false;
-        zHasValue = false;
+        dayHasValue = false;
+        monthHasValue = false;
+        cashAmountHasValue = false;
         checkProcess = 1;
 
         boolean missInfo = false;
