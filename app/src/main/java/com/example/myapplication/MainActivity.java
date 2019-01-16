@@ -9,11 +9,11 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     //画面オブジェクトのTextViewを格納する変数の宣言
-    private TextView tv1;
-    private TextView tv3;
-    private TextView tv6;
-    private TextView tv9;
-    private TextView tv12;
+    private TextView tv_month;
+    private TextView tv_day;
+    private TextView tv_cashAmount;
+    private TextView tv_restOfDays;
+    private TextView tv_cashAmountPerDay;
 
     int month = 0;
     int day = 0;
@@ -43,11 +43,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //各画面オブジェクトを変数に格納する
-        tv1 = (TextView) findViewById(R.id.textView1);
-        tv3 = (TextView) findViewById(R.id.textView3);
-        tv6 = (TextView) findViewById(R.id.textView6);
-        tv9 = (TextView) findViewById(R.id.textView9);
-        tv12 = (TextView) findViewById(R.id.textView12);
+        tv_month = (TextView) findViewById(R.id.textView1);
+        tv_day = (TextView) findViewById(R.id.textView3);
+        tv_cashAmount = (TextView) findViewById(R.id.textView6);
+        tv_restOfDays = (TextView) findViewById(R.id.textView9);
+        tv_cashAmountPerDay = (TextView) findViewById(R.id.textView12);
 
         //月から入力するようにToastで促す
         Toast.makeText(getApplicationContext(),"Enter Month.", Toast.LENGTH_SHORT).show();
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        tv1.setText(Integer.toString(month));
+        tv_month.setText(Integer.toString(month));
     }
 
     private void addNumberToDay(int num) {
@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        tv3.setText(Integer.toString(day));
+        tv_day.setText(Integer.toString(day));
     }
 
     private void addNumberToCashAmount(int num) {
@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
             cashAmount = (cashAmount * 10) + num;
         }
 
-        tv6.setText(Integer.toString(cashAmount));
+        tv_cashAmount.setText(Integer.toString(cashAmount));
     }
 
     private void clearAll(){
@@ -177,11 +177,11 @@ public class MainActivity extends AppCompatActivity {
 
         currentCheckProcess = CheckProcess.Month;
 
-        tv1.setText(R.string.tstr1);   //月をクリア
-        tv3.setText(R.string.tstr3);   //日をクリア
-        tv6.setText(R.string.tstr6);   //残金をクリア
-        tv9.setText(R.string.tstr9);   //残り日数をクリア
-        tv12.setText(R.string.tstr12); //1日あたりをクリア
+        tv_month.setText(R.string.tstr1);               //月をクリア
+        tv_day.setText(R.string.tstr3);                 //日をクリア
+        tv_cashAmount.setText(R.string.tstr6);         //残金をクリア
+        tv_restOfDays.setText(R.string.tstr9);         //残り日数をクリア
+        tv_cashAmountPerDay.setText(R.string.tstr12); //1日あたりをクリア
 
         //もう一度初めからの入力を促す
         Toast.makeText(getApplicationContext(), "TRY AGAIN.", Toast.LENGTH_SHORT).show();
@@ -225,8 +225,8 @@ public class MainActivity extends AppCompatActivity {
         int cashAmountPerDay = cashAmount / restOfDays;
 
         //残り日数、１日あたりの計算結果を画面に表示
-        tv9.setText(Integer.toString(restOfDays));
-        tv12.setText(Integer.toString(cashAmountPerDay));
+        tv_restOfDays.setText(Integer.toString(restOfDays));
+        tv_cashAmountPerDay.setText(Integer.toString(cashAmountPerDay));
     }
 
     //入力された月に対する日数を返す関数
