@@ -57,50 +57,50 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //数字のボタンが押されたら対応する数字を引数にaddNumberを呼び出す
-    public void button1Clicked(View v){
+    public void onButton_1(View v){
         addNumber(1);
     }
 
-    public void button2Clicked(View v){
+    public void onButton_2(View v){
         addNumber(2);
     }
 
-    public void button3Clicked(View v){
+    public void onButton_3(View v){
         addNumber(3);
     }
 
-    public void button4Clicked(View v){
+    public void onButton_4(View v){
         addNumber(4);
     }
 
-    public void button5Clicked(View v){
+    public void onButton_5(View v){
         addNumber(5);
     }
 
-    public void button6Clicked(View v){
+    public void onButton_6(View v){
         addNumber(6);
     }
 
-    public void button7Clicked(View v){
+    public void onButton_7(View v){
         addNumber(7);
     }
 
-    public void button8Clicked(View v){
+    public void onButton_8(View v){
         addNumber(8);
     }
 
-    public void button9Clicked(View v){
+    public void onButton_9(View v){
         addNumber(9);
     }
 
-    public void button11Clicked(View v){
+    public void onButton_0(View v){
         addNumber(0);
     }
 
-    public void button10Clicked(View v){
+    public void onButtonNext_Enter(View v){
         toNext();
     }
-    public void button12Clicked(View v){
+    public void onButtonClearAll(View v){
         clearAll();
     }
 

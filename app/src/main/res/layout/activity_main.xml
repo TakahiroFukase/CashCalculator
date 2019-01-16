@@ -127,21 +127,21 @@
 
             <Button
                 android:id="@+id/button1"
-                android:onClick="button1Clicked"
+                android:onClick="onButton_1"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="@string/bstr1" />
 
             <Button
                 android:id="@+id/button2"
-                android:onClick="button2Clicked"
+                android:onClick="onButton_2"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="@string/bstr2" />
 
             <Button
                 android:id="@+id/button3"
-                android:onClick="button3Clicked"
+                android:onClick="onButton_3"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="@string/bstr3" />
@@ -153,21 +153,21 @@
 
             <Button
                 android:id="@+id/button4"
-                android:onClick="button4Clicked"
+                android:onClick="onButton_4"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="@string/bstr4" />
 
             <Button
                 android:id="@+id/button5"
-                android:onClick="button5Clicked"
+                android:onClick="onButton_5"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="@string/bstr5" />
 
             <Button
                 android:id="@+id/button6"
-                android:onClick="button6Clicked"
+                android:onClick="onButton_6"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="@string/bstr6" />
@@ -180,21 +180,21 @@
 
             <Button
                 android:id="@+id/button7"
-                android:onClick="button7Clicked"
+                android:onClick="onButton_7"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="@string/bstr7" />
 
             <Button
                 android:id="@+id/button8"
-                android:onClick="button8Clicked"
+                android:onClick="onButton_8"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="@string/bstr8" />
 
             <Button
                 android:id="@+id/button9"
-                android:onClick="button9Clicked"
+                android:onClick="onButton_9"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="@string/bstr9" />
@@ -206,21 +206,21 @@
 
             <Button
                 android:id="@+id/button10"
-                android:onClick="button10Clicked"
+                android:onClick="onButtonNext_Enter"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="@string/bstr10" />
 
             <Button
                 android:id="@+id/button11"
-                android:onClick="button11Clicked"
+                android:onClick="onButton_0"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="@string/bstr11" />
 
             <Button
                 android:id="@+id/button12"
-                android:onClick="button12Clicked"
+                android:onClick="onButtonClearAll"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:text="@string/bstr12" />
