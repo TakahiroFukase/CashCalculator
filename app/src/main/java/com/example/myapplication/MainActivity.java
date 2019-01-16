@@ -34,9 +34,6 @@ public class MainActivity extends AppCompatActivity {
     //最初は月の入力から始める
     CheckProcess currentCheckProcess = CheckProcess.Month;
 
-    int daysOfMonth = 0;
-    int restOfDays = 0;
-
     //給料日は15日で固定とする
     final int payday = 15;
 
@@ -180,9 +177,6 @@ public class MainActivity extends AppCompatActivity {
 
         currentCheckProcess = CheckProcess.Month;
 
-        daysOfMonth = 0;
-        restOfDays = 0;
-
         tv1.setText(R.string.tstr1);   //月をクリア
         tv3.setText(R.string.tstr3);   //日をクリア
         tv6.setText(R.string.tstr6);   //残金をクリア
@@ -217,13 +211,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void showResult(){
 
-        //入力された月に対する日数を取得
-        daysOfMonth = getDaysOfMonth();
+        int restOfDays; //次の給料日までの日数
 
-        if (payday <= day) //次回の給料日が来月の場合
-            restOfDays = daysOfMonth - (day - 1) + (payday - 1);
-        else //次回の給料日が今月の場合
+        if (payday <= day) { //次回の給料日が来月の場合
+
+            restOfDays = getDaysOfMonth() - (day - 1) + (payday - 1);
+
+        } else {              //次回の給料日が今月の場合
+
             restOfDays = (payday - 1) - (day - 1);
+        }
 
         int cashAmountPerDay = cashAmount / restOfDays;
 
@@ -232,6 +229,7 @@ public class MainActivity extends AppCompatActivity {
         tv12.setText(Integer.toString(cashAmountPerDay));
     }
 
+    //入力された月に対する日数を返す関数
     private int getDaysOfMonth() {
 
         if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
