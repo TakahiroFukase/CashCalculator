@@ -173,20 +173,23 @@ public class MainActivity extends AppCompatActivity {
         month = 0;
         day = 0;
         cashAmount = 0;
+
         monthHasValue = false;
         dayHasValue = false;
         cashAmountHasValue = false;
+
         currentCheckProcess = CheckProcess.Month;
 
         daysOfMonth = 0;
         restOfDays = 0;
 
-        tv1.setText(R.string.tstr1);
-        tv3.setText(R.string.tstr3);
-        tv6.setText(R.string.tstr6);
-        tv9.setText(R.string.tstr9);
-        tv12.setText(R.string.tstr12);
+        tv1.setText(R.string.tstr1);   //月をクリア
+        tv3.setText(R.string.tstr3);   //日をクリア
+        tv6.setText(R.string.tstr6);   //残金をクリア
+        tv9.setText(R.string.tstr9);   //残り日数をクリア
+        tv12.setText(R.string.tstr12); //1日あたりをクリア
 
+        //もう一度初めからの入力を促す
         Toast.makeText(getApplicationContext(), "TRY AGAIN.", Toast.LENGTH_SHORT).show();
 
     }
@@ -195,22 +198,26 @@ public class MainActivity extends AppCompatActivity {
 
         if (monthHasValue && currentCheckProcess == CheckProcess.Month) {
 
+            //日の入力に移る
             currentCheckProcess = CheckProcess.Day;
             Toast.makeText(getApplicationContext(), "Enter Day.", Toast.LENGTH_SHORT ).show();
 
         }else if (dayHasValue && currentCheckProcess == CheckProcess.Day){
 
+            //残金の入力に移る
             currentCheckProcess = CheckProcess.CashAmount;
             Toast.makeText(getApplicationContext(), "Enter Cash Amount.", Toast.LENGTH_SHORT).show();
 
         }else if (cashAmountHasValue && currentCheckProcess == CheckProcess.CashAmount){
 
+            //入力情報を元に結果を表示
             showResult();
         }
     }
 
     private void showResult(){
 
+        //入力された月に対する日数を取得
         daysOfMonth = getDaysOfMonth();
 
         if (payday <= day) //次回の給料日が来月の場合
