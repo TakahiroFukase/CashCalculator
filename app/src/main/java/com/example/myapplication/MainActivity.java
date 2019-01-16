@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         clearAll();
     }
 
-    public void addNumber(int num){
+    private void addNumber(int num){
 
         if (currentCheckProcess == CheckProcess.Month) {
 
@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void clearAll(){
+    private void clearAll(){
 
         month = 0;
         day = 0;
@@ -197,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void showResult(){
+    private void showResult(){
 
         daysOfMonth = getDaysOfMonth();
 
