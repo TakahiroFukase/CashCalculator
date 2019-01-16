@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     int restOfDays = 0;
 
     final int payday = 15;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +49,53 @@ public class MainActivity extends AppCompatActivity {
         tv12 = (TextView) findViewById(R.id.textView12);
 
         Toast.makeText(getApplicationContext(),"Enter Month.", Toast.LENGTH_SHORT).show();
+    }
+
+    public void button1Clicked(View v){
+        addNumber(1);
+    }
+
+    public void button2Clicked(View v){
+        addNumber(2);
+    }
+
+    public void button3Clicked(View v){
+        addNumber(3);
+    }
+
+    public void button4Clicked(View v){
+        addNumber(4);
+    }
+
+    public void button5Clicked(View v){
+        addNumber(5);
+    }
+
+    public void button6Clicked(View v){
+        addNumber(6);
+    }
+
+    public void button7Clicked(View v){
+        addNumber(7);
+    }
+
+    public void button8Clicked(View v){
+        addNumber(8);
+    }
+
+    public void button9Clicked(View v){
+        addNumber(9);
+    }
+
+    public void button11Clicked(View v){
+        addNumber(0);
+    }
+
+    public void button10Clicked(View v){
+        toNext();
+    }
+    public void button12Clicked(View v){
+        clearAll();
     }
 
     public void addNumber(int num){
@@ -106,63 +153,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-    
-    public void button1Clicked(View v){
-        addNumber(1);
-    }
-
-    public void button2Clicked(View v){
-        addNumber(2);
-    }
-
-    public void button3Clicked(View v){
-        addNumber(3);
-    }
-
-    public void button4Clicked(View v){
-        addNumber(4);
-    }
-
-    public void button5Clicked(View v){
-        addNumber(5);
-    }
-
-    public void button6Clicked(View v){
-        addNumber(6);
-    }
-
-    public void button7Clicked(View v){
-        addNumber(7);
-    }
-
-    public void button8Clicked(View v){
-        addNumber(8);
-    }
-
-    public void button9Clicked(View v){
-        addNumber(9);
-    }
-
-    public void button11Clicked(View v){
-        addNumber(0);
-    }
-
-
-    public void button10Clicked(View v){
-
-        if (monthHasValue && currentCheckProcess == CheckProcess.Month) {
-            currentCheckProcess = CheckProcess.Day;
-            Toast.makeText(getApplicationContext(), "Enter Day.", Toast.LENGTH_SHORT ).show();
-        }else if (dayHasValue && currentCheckProcess == CheckProcess.Day){
-            currentCheckProcess = CheckProcess.CashAmount;
-            Toast.makeText(getApplicationContext(), "Enter Cash Amount.", Toast.LENGTH_SHORT).show();
-        }else if (cashAmountHasValue && currentCheckProcess == CheckProcess.CashAmount){
-            showResult();
-        }
-    }
-    public void button12Clicked(View v){
-        clearAll();
-    }
 
     public void clearAll(){
 
@@ -187,6 +177,24 @@ public class MainActivity extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(), "TRY AGAIN.", Toast.LENGTH_SHORT).show();
 
+    }
+
+    private void toNext() {
+
+        if (monthHasValue && currentCheckProcess == CheckProcess.Month) {
+
+            currentCheckProcess = CheckProcess.Day;
+            Toast.makeText(getApplicationContext(), "Enter Day.", Toast.LENGTH_SHORT ).show();
+
+        }else if (dayHasValue && currentCheckProcess == CheckProcess.Day){
+
+            currentCheckProcess = CheckProcess.CashAmount;
+            Toast.makeText(getApplicationContext(), "Enter Cash Amount.", Toast.LENGTH_SHORT).show();
+
+        }else if (cashAmountHasValue && currentCheckProcess == CheckProcess.CashAmount){
+
+            showResult();
+        }
     }
 
     public void showResult(){
