@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     int daysOfMonth = 0;
     int restOfDays = 0;
 
+    final int payday = 15;
+
 
 
     @Override
@@ -193,13 +195,15 @@ public class MainActivity extends AppCompatActivity {
 
         daysOfMonth = getDaysOfMonth();
 
-        if (day >= 15)//翌月まであるパターン
-            restOfDays = daysOfMonth - (day - 1) + 14;
-        else//今月で締めるパターン
-            restOfDays = 14 - (day - 1);
+        if (payday <= day) //次回の給料日が来月の場合
+            restOfDays = daysOfMonth - (day - 1) + (payday - 1);
+        else //次回の給料日が今月の場合
+            restOfDays = (payday - 1) - (day - 1);
+
+        int cashAmountPerDay = cashAmount / restOfDays;
 
         tv9.setText(Integer.toString(restOfDays));
-        tv12.setText(Integer.toString(cashAmount /restOfDays));
+        tv12.setText(Integer.toString(cashAmountPerDay));
     }
 
     private int getDaysOfMonth() {
