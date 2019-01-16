@@ -22,7 +22,13 @@ public class MainActivity extends AppCompatActivity {
     boolean dayHasValue = false;
     boolean cashAmountHasValue = false;
 
-    int checkProcess = 1;
+    private enum CheckProcess {
+        Month,
+        Day,
+        CashAmount
+    }
+
+    CheckProcess currentCheckProcess = CheckProcess.Month;
 
     boolean missInfo = false;
 
@@ -47,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void addNumber(int num){
 
-        if (checkProcess == 1) {
+        if (currentCheckProcess == CheckProcess.Month) {
 
             if (!(monthHasValue)) {
                 month = num;
@@ -59,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             if (month > 12){
                 missInfo = true;
             }
-        }else if (checkProcess == 2){
+        }else if (currentCheckProcess == CheckProcess.Day){
 
             if (!(dayHasValue)){
                 day = num;
@@ -72,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 missInfo = true;
             }
 
-        }else if (checkProcess == 3){
+        }else if (currentCheckProcess == CheckProcess.CashAmount){
 
             if (!(cashAmountHasValue)){
                 cashAmount = num;
@@ -87,18 +93,20 @@ public class MainActivity extends AppCompatActivity {
             missInfo = false;
         }else {
 
-            if (checkProcess == 1) {
-                tv1.setText(Integer.toString(month));
-            } else if (checkProcess == 2) {
-                tv3.setText(Integer.toString(day));
-            } else if (checkProcess == 3) {
-                tv6.setText(Integer.toString(cashAmount));
+            switch (currentCheckProcess) {
+                case Month:
+                    tv1.setText(Integer.toString(month));
+                    break;
+                case Day:
+                    tv3.setText(Integer.toString(day));
+                    break;
+                case CashAmount:
+                    tv6.setText(Integer.toString(cashAmount));
+                    break;
             }
         }
     }
-
-
-
+    
     public void button1Clicked(View v){
         addNumber(1);
     }
@@ -135,26 +143,26 @@ public class MainActivity extends AppCompatActivity {
         addNumber(9);
     }
 
-    public void button10Clicked(View v){
-
-        if (monthHasValue && checkProcess == 1) {
-            checkProcess = 2;
-            Toast.makeText(getApplicationContext(), "Enter Day.", Toast.LENGTH_SHORT ).show();
-        }else if (dayHasValue && checkProcess == 2){
-            checkProcess = 3;
-            Toast.makeText(getApplicationContext(), "Enter Cash Amount.", Toast.LENGTH_SHORT).show();
-        }else if (cashAmountHasValue && checkProcess == 3){
-            calculate();
-        }
-
-    }
     public void button11Clicked(View v){
         addNumber(0);
+    }
+
+
+    public void button10Clicked(View v){
+
+        if (monthHasValue && currentCheckProcess == CheckProcess.Month) {
+            currentCheckProcess = CheckProcess.Day;
+            Toast.makeText(getApplicationContext(), "Enter Day.", Toast.LENGTH_SHORT ).show();
+        }else if (dayHasValue && currentCheckProcess == CheckProcess.Day){
+            currentCheckProcess = CheckProcess.CashAmount;
+            Toast.makeText(getApplicationContext(), "Enter Cash Amount.", Toast.LENGTH_SHORT).show();
+        }else if (cashAmountHasValue && currentCheckProcess == CheckProcess.CashAmount){
+            calculate();
+        }
     }
     public void button12Clicked(View v){
         clearAll();
     }
-
 
     public void clearAll(){
 
@@ -164,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
         monthHasValue = false;
         dayHasValue = false;
         cashAmountHasValue = false;
-        checkProcess = 1;
+        currentCheckProcess = CheckProcess.Month;
 
         boolean missInfo = false;
 
