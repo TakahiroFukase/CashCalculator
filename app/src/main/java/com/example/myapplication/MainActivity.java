@@ -8,8 +8,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    int day = 0;
     int month = 0;
+    int day = 0;
     int cashAmount = 0;
 
     boolean monthHasValue = false;
@@ -184,12 +184,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calculate(){
-        if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
-            daysOfMonth = 31;
-        else if (month == 2)
-            daysOfMonth = 28;
-        else
-            daysOfMonth = 30;
+
+        daysOfMonth = getDaysOfMonth();
 
         if (day >= 15)//翌月まであるパターン
             restOfDays = daysOfMonth - (day - 1) + 14;
@@ -200,5 +196,18 @@ public class MainActivity extends AppCompatActivity {
         tv9.setText(Integer.toString(restOfDays));
         TextView tv12 = (TextView) findViewById(R.id.textView12);
         tv12.setText(Integer.toString(cashAmount /restOfDays));
+    }
+
+    private int getDaysOfMonth() {
+
+        if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+            return 31;
+        }
+
+        if (month == 2) {
+            return 28;
+        }
+
+        return 30;
     }
 }
