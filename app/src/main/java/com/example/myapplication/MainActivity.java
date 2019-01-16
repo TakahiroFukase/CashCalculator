@@ -8,9 +8,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    int x = 0;
-    int y = 0;
-    int z = 0;
+    int day = 0;
+    int month = 0;
+    int cashAmount = 0;
     boolean dayHasValue = false;
     boolean monthHasValue = false;
     boolean cashAmountHasValue = false;
@@ -37,35 +37,35 @@ public class MainActivity extends AppCompatActivity {
         if (checkProcess == 1) {
 
             if (!(dayHasValue)) {
-                x = num;
+                day = num;
                 dayHasValue = true;
             } else {
-                x = (x * 10) + num;
+                day = (day * 10) + num;
             }
 
-            if (x > 12){
+            if (day > 12){
                 missInfo = true;
             }
         }else if (checkProcess == 2){
 
             if (!(monthHasValue)){
-                y = num;
+                month = num;
                 monthHasValue = true;
             }else{
-                y = (y * 10) + num;
+                month = (month * 10) + num;
             }
 
-            if (y > 31){
+            if (month > 31){
                 missInfo = true;
             }
 
         }else if (checkProcess == 3){
 
             if (!(cashAmountHasValue)){
-                z = num;
+                cashAmount = num;
                 cashAmountHasValue = true;
             }else{
-                z = (z * 10) + num;
+                cashAmount = (cashAmount * 10) + num;
             }
         }
 
@@ -76,13 +76,13 @@ public class MainActivity extends AppCompatActivity {
 
             if (checkProcess == 1) {
                 TextView tv1 = (TextView) findViewById(R.id.textView1);
-                tv1.setText(Integer.toString(x));
+                tv1.setText(Integer.toString(day));
             } else if (checkProcess == 2) {
                 TextView tv3 = (TextView) findViewById(R.id.textView3);
-                tv3.setText(Integer.toString(y));
+                tv3.setText(Integer.toString(month));
             } else if (checkProcess == 3) {
                 TextView tv6 = (TextView) findViewById(R.id.textView6);
-                tv6.setText(Integer.toString(z));
+                tv6.setText(Integer.toString(cashAmount));
 
             }
         }
@@ -148,9 +148,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void clearAll(){
-        x = 0;
-        y = 0;
-        z = 0;
+        day = 0;
+        month = 0;
+        cashAmount = 0;
         dayHasValue = false;
         monthHasValue = false;
         cashAmountHasValue = false;
@@ -182,22 +182,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calculate(){
-        if (x == 1 || x == 3 || x == 5 || x == 7 || x == 8 || x == 10 || x == 12)
+        if (day == 1 || day == 3 || day == 5 || day == 7 || day == 8 || day == 10 || day == 12)
             daysOfMonth = 31;
-        else if (x == 2)
+        else if (day == 2)
             daysOfMonth = 28;
         else
             daysOfMonth = 30;
 
-        if (y >= 15)//翌月まであるパターン
-            restOfDays = daysOfMonth - (y - 1) + 14;
+        if (month >= 15)//翌月まであるパターン
+            restOfDays = daysOfMonth - (month - 1) + 14;
         else//今月で締めるパターン
-            restOfDays = 14 - (y - 1);
+            restOfDays = 14 - (month - 1);
 
         TextView tv9 = (TextView) findViewById(R.id.textView9);
         tv9.setText(Integer.toString(restOfDays));
         TextView tv12 = (TextView) findViewById(R.id.textView12);
-        tv12.setText(Integer.toString(z/restOfDays));
+        tv12.setText(Integer.toString(cashAmount /restOfDays));
 
 
     }
