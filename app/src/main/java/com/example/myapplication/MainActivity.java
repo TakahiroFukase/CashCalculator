@@ -100,58 +100,65 @@ public class MainActivity extends AppCompatActivity {
 
     private void addNumber(int num){
 
-        if (currentCheckProcess == CheckProcess.Month) {
+        switch (currentCheckProcess) {
+            case Month:
+                addNumberToMonth(num);
+                break;
+            case Day:
+                addNumberToDay(num);
+                break;
+            case CashAmount:
+                addNumberToCashAmount(num);
+                break;
+        }
+    }
 
-            if (!(monthHasValue)) {
-                month = num;
-                monthHasValue = true;
-            } else {
-                month = (month * 10) + num;
-            }
+    private void addNumberToMonth(int num) {
 
-            if (month > 12){
-                missInfo = true;
-            }
-        }else if (currentCheckProcess == CheckProcess.Day){
-
-            if (!(dayHasValue)){
-                day = num;
-                dayHasValue = true;
-            }else{
-                day = (day * 10) + num;
-            }
-
-            if (day > 31){
-                missInfo = true;
-            }
-
-        }else if (currentCheckProcess == CheckProcess.CashAmount){
-
-            if (!(cashAmountHasValue)){
-                cashAmount = num;
-                cashAmountHasValue = true;
-            }else{
-                cashAmount = (cashAmount * 10) + num;
-            }
+        if (!(monthHasValue)) {
+            month = num;
+            monthHasValue = true;
+        } else {
+            month = (month * 10) + num;
         }
 
-        if (missInfo) {
+        //12を上回る数字は月として不正なデータ
+        if (month > 12){
             clearAll();
-            missInfo = false;
-        }else {
-
-            switch (currentCheckProcess) {
-                case Month:
-                    tv1.setText(Integer.toString(month));
-                    break;
-                case Day:
-                    tv3.setText(Integer.toString(day));
-                    break;
-                case CashAmount:
-                    tv6.setText(Integer.toString(cashAmount));
-                    break;
-            }
+            return;
         }
+
+        tv1.setText(Integer.toString(month));
+    }
+
+    private void addNumberToDay(int num) {
+
+        if (!(dayHasValue)) {
+            day = num;
+            dayHasValue = true;
+        } else {
+            day = (day * 10) + num;
+        }
+
+        //31を上回る数字は日にちとして不正なデータ
+        if (day > 31){
+            clearAll();
+            return;
+        }
+
+        tv3.setText(Integer.toString(day));
+    }
+
+    private void addNumberToCashAmount(int num) {
+
+        if (!(cashAmountHasValue)){
+            cashAmount = num;
+            cashAmountHasValue = true;
+        }else{
+            cashAmount = (cashAmount * 10) + num;
+        }
+
+        tv6.setText(Integer.toString(cashAmount));
     }
 
     private void clearAll(){
