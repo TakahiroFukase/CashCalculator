@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    //画面オブジェクトのTextViewを格納する変数の宣言
     private TextView tv1;
     private TextView tv3;
     private TextView tv6;
@@ -18,23 +19,25 @@ public class MainActivity extends AppCompatActivity {
     int day = 0;
     int cashAmount = 0;
 
+    //各項目に値があるかどうかを示すフラグ
     boolean monthHasValue = false;
     boolean dayHasValue = false;
     boolean cashAmountHasValue = false;
 
+    //入力を求める3つのプロセスをenumで定義
     private enum CheckProcess {
         Month,
         Day,
         CashAmount
     }
 
+    //最初は月の入力から始める
     CheckProcess currentCheckProcess = CheckProcess.Month;
-
-    boolean missInfo = false;
 
     int daysOfMonth = 0;
     int restOfDays = 0;
 
+    //給料日は15日で固定とする
     final int payday = 15;
 
     @Override
@@ -42,15 +45,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //各画面オブジェクトを変数に格納する
         tv1 = (TextView) findViewById(R.id.textView1);
         tv3 = (TextView) findViewById(R.id.textView3);
         tv6 = (TextView) findViewById(R.id.textView6);
         tv9 = (TextView) findViewById(R.id.textView9);
         tv12 = (TextView) findViewById(R.id.textView12);
 
+        //月から入力するようにToastで促す
         Toast.makeText(getApplicationContext(),"Enter Month.", Toast.LENGTH_SHORT).show();
     }
 
+    //数字のボタンが押されたら対応する数字を引数にaddNumberを呼び出す
     public void button1Clicked(View v){
         addNumber(1);
     }
@@ -100,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void addNumber(int num){
 
+        //現在のプロセスによってどこに入力するのかを分岐させる
         switch (currentCheckProcess) {
             case Month:
                 addNumberToMonth(num);
@@ -171,8 +178,6 @@ public class MainActivity extends AppCompatActivity {
         cashAmountHasValue = false;
         currentCheckProcess = CheckProcess.Month;
 
-        boolean missInfo = false;
-
         daysOfMonth = 0;
         restOfDays = 0;
 
@@ -215,6 +220,7 @@ public class MainActivity extends AppCompatActivity {
 
         int cashAmountPerDay = cashAmount / restOfDays;
 
+        //残り日数、１日あたりの計算結果を画面に表示
         tv9.setText(Integer.toString(restOfDays));
         tv12.setText(Integer.toString(cashAmountPerDay));
     }
