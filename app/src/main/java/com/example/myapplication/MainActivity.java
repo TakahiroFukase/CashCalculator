@@ -8,6 +8,12 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView tv1;
+    private TextView tv3;
+    private TextView tv6;
+    private TextView tv9;
+    private TextView tv12;
+
     int month = 0;
     int day = 0;
     int cashAmount = 0;
@@ -29,6 +35,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        tv1 = (TextView) findViewById(R.id.textView1);
+        tv3 = (TextView) findViewById(R.id.textView3);
+        tv6 = (TextView) findViewById(R.id.textView6);
+        tv9 = (TextView) findViewById(R.id.textView9);
+        tv12 = (TextView) findViewById(R.id.textView12);
 
         Toast.makeText(getApplicationContext(),"Enter Month.", Toast.LENGTH_SHORT).show();
     }
@@ -76,15 +88,11 @@ public class MainActivity extends AppCompatActivity {
         }else {
 
             if (checkProcess == 1) {
-                TextView tv1 = (TextView) findViewById(R.id.textView1);
                 tv1.setText(Integer.toString(month));
             } else if (checkProcess == 2) {
-                TextView tv3 = (TextView) findViewById(R.id.textView3);
                 tv3.setText(Integer.toString(day));
             } else if (checkProcess == 3) {
-                TextView tv6 = (TextView) findViewById(R.id.textView6);
                 tv6.setText(Integer.toString(cashAmount));
-
             }
         }
     }
@@ -163,23 +171,13 @@ public class MainActivity extends AppCompatActivity {
         daysOfMonth = 0;
         restOfDays = 0;
 
-
-
-        TextView tv1 = (TextView) findViewById(R.id.textView1);
         tv1.setText(R.string.tstr1);
-        TextView tv3 = (TextView) findViewById(R.id.textView3);
         tv3.setText(R.string.tstr3);
-        TextView tv6 = (TextView) findViewById(R.id.textView6);
         tv6.setText(R.string.tstr6);
-        TextView tv9 = (TextView) findViewById(R.id.textView9);
         tv9.setText(R.string.tstr9);
-        TextView tv12 = (TextView) findViewById(R.id.textView12);
         tv12.setText(R.string.tstr12);
 
-
-
         Toast.makeText(getApplicationContext(), "TRY AGAIN.", Toast.LENGTH_SHORT).show();
-
 
     }
 
@@ -192,9 +190,7 @@ public class MainActivity extends AppCompatActivity {
         else//今月で締めるパターン
             restOfDays = 14 - (day - 1);
 
-        TextView tv9 = (TextView) findViewById(R.id.textView9);
         tv9.setText(Integer.toString(restOfDays));
-        TextView tv12 = (TextView) findViewById(R.id.textView12);
         tv12.setText(Integer.toString(cashAmount /restOfDays));
     }
 
