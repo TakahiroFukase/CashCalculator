@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="tstr1">x</string>
+    <string name="tstr1">---</string>
     <string name="tstr2">月</string>
-    <string name="tstr3">y</string>
+    <string name="tstr3">---</string>
     <string name="tstr4">日</string>
     <string name="tstr5">残金</string>
-    <string name="tstr6">z</string>
+    <string name="tstr6">---</string>
     <string name="tstr7">円</string>
     <string name="tstr8">残り</string>
     <string name="tstr9">---</string>
