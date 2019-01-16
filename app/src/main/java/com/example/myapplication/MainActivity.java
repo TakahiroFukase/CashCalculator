@@ -36,9 +36,7 @@ public class MainActivity extends AppCompatActivity {
     int restOfDays = 0;
 
     final int payday = 15;
-
-
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -159,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
             currentCheckProcess = CheckProcess.CashAmount;
             Toast.makeText(getApplicationContext(), "Enter Cash Amount.", Toast.LENGTH_SHORT).show();
         }else if (cashAmountHasValue && currentCheckProcess == CheckProcess.CashAmount){
-            calculate();
+            showResult();
         }
     }
     public void button12Clicked(View v){
@@ -191,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void calculate(){
+    public void showResult(){
 
         daysOfMonth = getDaysOfMonth();
 
