@@ -215,11 +215,11 @@ public class MainActivity extends AppCompatActivity {
 
         if (payday <= day) { //次回の給料日が来月の場合
 
-            restOfDays = getDaysOfMonth() - (day - 1) + (payday - 1);
+            restOfDays = getDaysOfMonth() - day + payday;
 
         } else {              //次回の給料日が今月の場合
 
-            restOfDays = (payday - 1) - (day - 1);
+            restOfDays = payday - day;
         }
 
         int cashAmountPerDay = cashAmount / restOfDays;
