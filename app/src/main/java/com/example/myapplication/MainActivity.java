@@ -120,6 +120,13 @@ public class MainActivity extends AppCompatActivity {
     private void addNumberToMonth(int num) {
 
         if (!(monthHasValue)) {
+
+            //0月はないので、いきなり0の入力はできない
+            if (num == 0) {
+
+                return;
+            }
+
             month = num;
             monthHasValue = true;
         } else {
@@ -138,6 +145,13 @@ public class MainActivity extends AppCompatActivity {
     private void addNumberToDay(int num) {
 
         if (!(dayHasValue)) {
+
+            //0日はないので、いきなり0の入力はできない
+            if (num == 0) {
+
+                return;
+            }
+
             day = num;
             dayHasValue = true;
         } else {
