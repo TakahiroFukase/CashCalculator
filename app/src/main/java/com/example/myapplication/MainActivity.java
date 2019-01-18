@@ -158,8 +158,8 @@ public class MainActivity extends AppCompatActivity {
             day = (day * 10) + num;
         }
 
-        //31を上回る数字は日にちとして不正なデータ
-        if (day > 31){
+        //月の日数に対して日にちが不正なデータの場合
+        if (isValidDay(day) == false){
             clearCurrentProcess();
             return;
         }
@@ -177,6 +177,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
         tv_cashAmount.setText(Integer.toString(cashAmount));
+    }
+
+    private boolean isValidDay(int day) {
+
+        int daysOfMonth = getDaysOfMonth();
+
+        if (day > daysOfMonth) {
+            return false;
+        }
+
+        return true;
+
     }
 
     private void clearCurrentProcess() {
