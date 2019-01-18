@@ -28,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private enum CheckProcess {
         Month,
         Day,
-        CashAmount
+        CashAmount,
+        End
     }
 
     //最初は月の入力から始める
@@ -179,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
         tv_cashAmount.setText(Integer.toString(cashAmount));
     }
 
+    //月の日数に対して日にちの入力が正しいかどうかを判断する関数
     private boolean isValidDay(int day) {
 
         int daysOfMonth = getDaysOfMonth();
@@ -191,6 +193,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //現在の入力プロセスをもう一度やり直すための関数
     private void clearCurrentProcess() {
 
         switch (currentCheckProcess) {
@@ -234,7 +237,6 @@ public class MainActivity extends AppCompatActivity {
 
         //再入力を促す
         Toast.makeText(getApplicationContext(), "TRY AGAIN.", Toast.LENGTH_SHORT).show();
-
     }
 
     private void toNext() {
@@ -276,6 +278,8 @@ public class MainActivity extends AppCompatActivity {
         //残り日数、１日あたりの計算結果を画面に表示
         tv_restOfDays.setText(Integer.toString(restOfDays));
         tv_cashAmountPerDay.setText(Integer.toString(cashAmountPerDay));
+
+        currentCheckProcess = CheckProcess.End;
     }
 
     //入力された月に対する日数を返す関数
