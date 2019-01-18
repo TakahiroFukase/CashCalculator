@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     boolean dayHasValue = false;
     boolean cashAmountHasValue = false;
 
-    //入力を求める3つのプロセスをenumで定義
+    //入力を求める3つのプロセスと、結果表示後のEndをenumで定義
     private enum CheckProcess {
         Month,
         Day,
