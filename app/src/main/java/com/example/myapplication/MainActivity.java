@@ -182,15 +182,9 @@ public class MainActivity extends AppCompatActivity {
 
     //月の日数に対して日にちの入力が正しいかどうかを判断する関数
     private boolean isValidDay(int day) {
-
-        int daysOfMonth = getDaysOfMonth();
-
-        if (day > daysOfMonth) {
-            return false;
-        }
-
-        return true;
-
+        
+        //その月の日数を越えていなければ入力は正しい
+        return day <= getDaysOfMonth();
     }
 
     //現在の入力プロセスをもう一度やり直すための関数
