@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
         //12を上回る数字は月として不正なデータ
         if (month > 12){
-            clearAll();
+            clearCurrentProcess();
             return;
         }
 
@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
 
         //31を上回る数字は日にちとして不正なデータ
         if (day > 31){
-            clearAll();
+            clearCurrentProcess();
             return;
         }
 
@@ -163,6 +163,29 @@ public class MainActivity extends AppCompatActivity {
         }
 
         tv_cashAmount.setText(Integer.toString(cashAmount));
+    }
+
+    private void clearCurrentProcess() {
+
+        switch (currentCheckProcess) {
+            case Month:
+                month = 0;
+                monthHasValue = false;
+                tv_month.setText(R.string.tstr1);
+                break;
+            case Day:
+                day = 0;
+                dayHasValue = false;
+                tv_day.setText(R.string.tstr3);
+                break;
+            case CashAmount:
+                cashAmount = 0;
+                cashAmountHasValue = false;
+                tv_cashAmount.setText(R.string.tstr6);
+                break;
+        }
+
+        Toast.makeText(getApplicationContext(), "TRY AGAIN.", Toast.LENGTH_SHORT).show();
     }
 
     private void clearAll(){
@@ -183,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
         tv_restOfDays.setText(R.string.tstr9);         //残り日数をクリア
         tv_cashAmountPerDay.setText(R.string.tstr12); //1日あたりをクリア
 
-        //もう一度初めからの入力を促す
+        //再入力を促す
         Toast.makeText(getApplicationContext(), "TRY AGAIN.", Toast.LENGTH_SHORT).show();
 
     }
